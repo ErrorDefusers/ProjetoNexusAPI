@@ -13,6 +13,6 @@ namespace NexusAPI.Domains
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "O tipo do funcionário é obrigatório")]
-        public string TipoDeFuncionario { get; set; }
+        public string? TipoDeFuncionario { get; set; }
     }
 }
