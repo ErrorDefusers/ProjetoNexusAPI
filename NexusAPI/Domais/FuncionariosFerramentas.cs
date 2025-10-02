@@ -1,18 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NexusAPI.Domais
+namespace NexusAPI.Domains
 {
     [Table("FuncionariosFerramentas")]
-    public class FuncionariosFerramentas
+    public class FuncionarioFerramentas
     {
         [Key]
         public Guid IdFuncionarioFerramenta { get; set; }
 
-        [ForeignKey("Funcionarios")]
+        
+        [Required]
+        public Guid FuncionarioId { get; set; }
+
+        [ForeignKey("FuncionarioId")]
         public Funcionarios? Funcionario { get; set; }
 
-        [ForeignKey("Ferramentas")]
+        
+        [Required]
+        public Guid FerramentaId { get; set; }
+
+        [ForeignKey("FerramentaId")]
         public Ferramentas? Ferramenta { get; set; }
     }
 }

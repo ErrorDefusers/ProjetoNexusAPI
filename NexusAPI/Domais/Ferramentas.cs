@@ -1,17 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace NexusAPI.Domais
+namespace NexusAPI.Domains
 {
-    [Table ("Ferramentas")]
+    
+    [Table("Ferramentas")]
     public class Ferramentas
     {
         [Key]
         public Guid IdFerramenta { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage ="O nome da ferramenta é obrigatório!")]
-        public string? Nome {get; set; }
+        [Required(ErrorMessage = "O nome da ferramenta é obrigatório!")]
+        public string? Nome { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "A descrição do curso é obrigatória!")]
@@ -23,7 +25,7 @@ namespace NexusAPI.Domais
 
         [Column(TypeName = "BIT")]
         [Required(ErrorMessage = "Status é obrigatório!")]
-        public string? Status { get; set; }
+        public bool Status { get; set; }
 
         [Column(TypeName = "VARCHAR (100)")]
         [Required(ErrorMessage = "Tipo de ferramenta é obrigatório!")]
