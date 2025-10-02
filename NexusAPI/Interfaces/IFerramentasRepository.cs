@@ -4,8 +4,8 @@ namespace NexusAPI.Interfaces
 {
     public interface IFerramentasRepository
     {
-        void Salvar(Ferramentas ferramenta);  // adiciona ou atualiza
+        void Salvar(Guid id, Ferramentas ferramenta);  // adiciona ou atualiza
         List<Ferramentas> Listar();  // pega todos as ferramentas
-        Ferramentas BuscarPorNome(string nome); // busca por nome
+        Ferramentas BuscarPorNome(Guid id, string nome); // busca por nome
     }
 }
