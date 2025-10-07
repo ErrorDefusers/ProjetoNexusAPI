@@ -346,3 +346,6 @@ C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\refint\Ne
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\NexusAPI.pdb
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\NexusAPI.genruntimeconfig.cache
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\ref\NexusAPI.dll
+C:\Users\55119\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\NexusAPI.dll
+C:\Users\55119\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\refint\NexusAPI.dll
+C:\Users\55119\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net8.0\NexusAPI.pdb
