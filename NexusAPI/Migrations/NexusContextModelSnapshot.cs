@@ -28,6 +28,9 @@ namespace NexusAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Descricao")
+                        .HasColumnType("VARCHAR(500)");
+
                     b.Property<string>("IdExterno")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
