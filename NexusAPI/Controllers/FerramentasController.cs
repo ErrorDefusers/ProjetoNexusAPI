@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NexusAPI.Domains;
 using NexusAPI.Interfaces;
-using System;
-using System.Collections.Generic;
 
 namespace NexusAPI.Controllers
 {
@@ -46,7 +44,6 @@ namespace NexusAPI.Controllers
             }
         }
 
-        
         [HttpPut("atualizar/{id}")]
         public IActionResult Atualizar(Guid id, string nome, string url, string tipo, bool status = true)
         {

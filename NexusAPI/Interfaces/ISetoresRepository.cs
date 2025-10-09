@@ -6,5 +6,6 @@ namespace NexusAPI.Interfaces
         void Salvar(Setores setor);  // adiciona ou atualiza
         List<Setores> Listar();  // lista todos os setores
         Setores BuscarPorNome(string nome); // busca setor pelo nome
+        void Deletar(Guid id); // deletar pelo id
     }
 }

@@ -1,7 +1,9 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using NexusAPI.Domains;
+﻿using NexusAPI.Domains;
 using NexusAPI.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NexusAPI.Repositories
 {
@@ -9,78 +11,61 @@ namespace NexusAPI.Repositories
     {
         private readonly NexusContext _context;
 
-        
         public FuncionariosCursosRepository(NexusContext context)
         {
             _context = context;
         }
 
-        public void Salvar(Funcionarios funcionario)
+        public void Salvar(FuncionariosCursos item)
         {
-            try
+            var existente = _context.FuncionariosCursos
+                .FirstOrDefault(f => f.IdFuncionarioCurso == item.IdFuncionarioCurso);
+
+            if (existente == null)
+                _context.FuncionariosCursos.Add(item);
+            else
             {
-                
-                var existente = _context.Funcionarios.Find(funcionario.IdFuncionario);
+                existente.CursoId = item.CursoId;
+                existente.FuncionarioId = item.FuncionarioId;
+                _context.FuncionariosCursos.Update(existente);
+            }
 
-                if (existente == null)
-                {
-                    
-                    _context.Funcionarios.Add(funcionario);
-                }
-                else
-                {
-                    
-                    existente.Nome = funcionario.Nome;
-                    existente.Email = funcionario.Email;
-                    existente.Senha = funcionario.Senha;
-                    existente.Cargo = funcionario.Cargo;
+            _context.SaveChanges();
+        }
 
-                    
-                    existente.TipoFuncionarioId = funcionario.TipoFuncionarioId;
-                    existente.SetorId = funcionario.SetorId;
+        public List<FuncionariosCursos> Listar()
+        {
+            return _context.FuncionariosCursos
+                .Include(f => f.Funcionario)
+                .Include(f => f.Curso)
+                .ToList();
+        }
 
-                    existente.DataNascimento = funcionario.DataNascimento;
+        public List<FuncionariosCursos> BuscarPorFuncionario(Guid funcionarioId)
+        {
+            return _context.FuncionariosCursos
+                .Include(f => f.Funcionario)
+                .Include(f => f.Curso)
+                .Where(f => f.FuncionarioId == funcionarioId)
+                .ToList();
+        }
 
-                    _context.Funcionarios.Update(existente);
-                }
+        public List<FuncionariosCursos> BuscarPorCurso(Guid cursoId)
+        {
+            return _context.FuncionariosCursos
+                .Include(f => f.Funcionario)
+                .Include(f => f.Curso)
+                .Where(f => f.CursoId == cursoId)
+                .ToList();
+        }
 
+        public void Deletar(Guid id)
+        {
+            var item = _context.FuncionariosCursos.Find(id);
+            if (item != null)
+            {
+                _context.FuncionariosCursos.Remove(item);
                 _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Deu ruim ao salvar funcionário: " + ex.Message);
-            }
-        }
-
-        public List<Funcionarios> Listar()
-        {
-            try
-            {
-                
-                return _context.Funcionarios
-                    .Include(f => f.TipoFuncionario)
-                    .Include(f => f.Setor)
-                    .ToList();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Deu ruim ao listar funcionários: " + ex.Message);
-            }
-        }
-
-        public Funcionarios BuscarPorEmail(string email)
-        {
-            try
-            {
-                
-                return _context.Funcionarios
-                    .Include(f => f.TipoFuncionario)
-                    .Include(f => f.Setor)
-                    .FirstOrDefault(f => f.Email.ToLower() == email.ToLower())!;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Deu ruim ao buscar funcionário: " + ex.Message);
             }
         }
     }

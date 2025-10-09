@@ -14,8 +14,10 @@ namespace NexusAPI.Domains
         public DbSet<FuncionariosCursos> FuncionariosCursos { get; set; }
         public DbSet<Setores> Setores { get; set; }
         public DbSet<TiposFuncionarios> TiposFuncionarios { get; set; }
+        public DbSet<FuncionarioFerramentas> FuncionariosFerramentas { get; set; }  
 
-        
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

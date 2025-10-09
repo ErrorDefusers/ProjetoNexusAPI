@@ -168,3 +168,4 @@ C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\NexusAPI.
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\NexusAPI.genruntimeconfig.cache
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\ref\NexusAPI.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
