@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NexusAPI.Domains;
 using NexusAPI.Interfaces;
 
@@ -42,7 +43,7 @@ namespace NexusAPI.Controllers
             }
         }
 
-        
+        [Authorize]
         [HttpGet("listar")]
         public IActionResult Listar()
         {

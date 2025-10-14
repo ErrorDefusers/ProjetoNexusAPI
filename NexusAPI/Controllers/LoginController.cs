@@ -22,43 +22,44 @@ namespace NexusAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] LoginDTO login)
+        public IActionResult Login([FromBody] LoginDTO loginDto)
         {
             try
             {
-                
-                var usuario = _context.Funcionarios
-                    .FirstOrDefault(f => f.Email.ToLower() == login.Email!.ToLower() && f.Senha == login.Password);
+                var usuario = _context.Funcionarios.FirstOrDefault(u =>
+                    u.Email == loginDto.Email && u.Senha == loginDto.Password);
 
                 if (usuario == null)
-                    return Unauthorized("Email ou senha inválidos.");
+                    return Unauthorized("Email ou senha inválidos!");
 
-                
-                var claims = new[]
+                // Geração do token com role
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, usuario.IdFuncionario.ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
-                    new Claim("nome", usuario.Nome)
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                        new Claim(ClaimTypes.Name, usuario.Nome),
+                        new Claim(ClaimTypes.Email, usuario.Email),
+                        new Claim(ClaimTypes.Role, usuario.Role) // 👈 Inclui o nível de acesso
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(60),
+                    SigningCredentials = new SigningCredentials(
+                        new SymmetricSecurityKey(key),
+                        SecurityAlgorithms.HmacSha256Signature
+                    ),
+                    Issuer = _configuration["Jwt:Issuer"],
+                    Audience = _configuration["Jwt:Audience"]
                 };
 
-                
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-                
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["Jwt:Issuer"],
-                    audience: _configuration["Jwt:Audience"],
-                    claims: claims,
-                    expires: DateTime.Now.AddMinutes(double.Parse(_configuration["Jwt:DurationInMinutes"]!)),
-                    signingCredentials: creds
-                );
+                var token = tokenHandler.CreateToken(tokenDescriptor);
 
                 return Ok(new
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    nome = usuario.Nome,
-                    email = usuario.Email
+                    token = tokenHandler.WriteToken(token),
+                    role = usuario.Role,
+                    nome = usuario.Nome
                 });
             }
             catch (Exception ex)
