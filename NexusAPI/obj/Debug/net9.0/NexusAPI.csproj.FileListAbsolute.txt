@@ -10,6 +10,7 @@ C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Azure.Cor
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Azure.Identity.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\BCrypt.Net-Next.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Humanizer.dll
+C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.Build.Locator.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
@@ -168,4 +169,3 @@ C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\NexusAPI.
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\NexusAPI.genruntimeconfig.cache
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\ref\NexusAPI.dll
 C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\50526653850\Desktop\ProjetoNexusAPI\NexusAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

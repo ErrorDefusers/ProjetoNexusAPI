@@ -9,11 +9,15 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// --------------------
 // DbContext
+// --------------------
 builder.Services.AddDbContext<NexusContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// --------------------
 // Registrando Repositories para DI
+// --------------------
 builder.Services.AddScoped<ICursosRepository, CursosRepository>();
 builder.Services.AddScoped<IFerramentasRepository, FerramentasRepository>();
 builder.Services.AddScoped<ISetoresRepository, SetoresRepository>();
@@ -22,7 +26,9 @@ builder.Services.AddScoped<IFuncionarioFerramentasRepository, FuncionariosFerram
 builder.Services.AddScoped<IFuncionariosRepository, FuncionariosRepository>();
 builder.Services.AddScoped<IFuncionariosCursosRepository, FuncionariosCursosRepository>();
 
+// --------------------
 // JWT Authentication
+// --------------------
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddAuthentication(options =>
@@ -44,11 +50,29 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Controllers
+// --------------------
+// Habilitando CORS para o frontend
+// --------------------
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173") // Porta do React
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // útil se usar cookies
+    });
+});
+
+// --------------------
+// Controllers e HttpClient
+// --------------------
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 
+// --------------------
 // Swagger com suporte a JWT
+// --------------------
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -58,7 +82,6 @@ builder.Services.AddSwaggerGen(c =>
         Description = "Documentação da API do Nexus"
     });
 
-    // Configuração para o botão Authorize (JWT)
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -66,7 +89,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Digite 'Bearer' [espaço] e depois seu token.\n\nExemplo: **Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...**"
+        Description = "Digite 'Bearer' [espaço] e depois seu token.\n\nExemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -87,7 +110,9 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// --------------------
 // Configuração Swagger (modo dev)
+// --------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -98,9 +123,15 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+// --------------------
+// Middleware
+// --------------------
+// HTTPS (verifique se o React também acessa via https)
 app.UseHttpsRedirection();
 
-// Ativando autenticação e autorização
+// **Ordem importante: CORS antes de auth**
+app.UseCors("CorsPolicy");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
