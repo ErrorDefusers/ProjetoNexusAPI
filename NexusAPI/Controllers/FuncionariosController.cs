@@ -16,9 +16,17 @@ namespace NexusAPI.Controllers
             _funcRepository = funcRepository;
         }
 
-        
+        // Criar funcionário (com Role)
         [HttpPost("criar")]
-        public IActionResult Criar(string nome, string email, string senha, DateTime dataNascimento, string cargo, Guid tipoFuncionarioId, Guid setorId)
+        public IActionResult Criar(
+            string nome,
+            string email,
+            string senha,
+            DateTime dataNascimento,
+            string cargo,
+            Guid tipoFuncionarioId,
+            Guid setorId,
+            string role)
         {
             try
             {
@@ -31,7 +39,8 @@ namespace NexusAPI.Controllers
                     DataNascimento = dataNascimento,
                     Cargo = cargo,
                     TipoFuncionarioId = tipoFuncionarioId,
-                    SetorId = setorId
+                    SetorId = setorId,
+                    Role = role
                 };
 
                 _funcRepository.Salvar(funcionario);
@@ -43,6 +52,44 @@ namespace NexusAPI.Controllers
             }
         }
 
+        // Atualizar funcionário (com Role)
+        [HttpPut("atualizar")]
+        public IActionResult Atualizar(
+            Guid id,
+            string nome,
+            string email,
+            string senha,
+            DateTime dataNascimento,
+            string cargo,
+            Guid tipoFuncionarioId,
+            Guid setorId,
+            string role)
+        {
+            try
+            {
+                Funcionarios funcionario = new()
+                {
+                    IdFuncionario = id,
+                    Nome = nome,
+                    Email = email,
+                    Senha = senha,
+                    DataNascimento = dataNascimento,
+                    Cargo = cargo,
+                    TipoFuncionarioId = tipoFuncionarioId,
+                    SetorId = setorId,
+                    Role = role
+                };
+
+                _funcRepository.Salvar(funcionario); // Assumindo que salva ou atualiza
+                return Ok("Funcionário atualizado!");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro ao atualizar funcionário: " + ex.Message);
+            }
+        }
+
+        // Listar funcionários (precisa de token JWT)
         [Authorize]
         [HttpGet("listar")]
         public IActionResult Listar()
@@ -58,7 +105,7 @@ namespace NexusAPI.Controllers
             }
         }
 
-        
+        // Buscar funcionário por email
         [HttpGet("buscar")]
         public IActionResult Buscar(string email)
         {
@@ -74,34 +121,7 @@ namespace NexusAPI.Controllers
             }
         }
 
-        
-        [HttpPut("atualizar")]
-        public IActionResult Atualizar(Guid id, string nome, string email, string senha, DateTime dataNascimento, string cargo, Guid tipoFuncionarioId, Guid setorId)
-        {
-            try
-            {
-                Funcionarios funcionario = new()
-                {
-                    IdFuncionario = id,
-                    Nome = nome,
-                    Email = email,
-                    Senha = senha,
-                    DataNascimento = dataNascimento,
-                    Cargo = cargo,
-                    TipoFuncionarioId = tipoFuncionarioId,
-                    SetorId = setorId
-                };
-
-                _funcRepository.Salvar(funcionario); 
-                return Ok("Funcionário atualizado!");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Erro ao atualizar funcionário: " + ex.Message);
-            }
-        }
-
-        
+        // Deletar funcionário
         [HttpDelete("deletar/{id}")]
         public IActionResult Deletar(Guid id)
         {

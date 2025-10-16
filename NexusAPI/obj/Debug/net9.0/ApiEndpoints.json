@@ -222,6 +222,11 @@
         "Name": "setorId",
         "Type": "System.Guid",
         "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -283,6 +288,11 @@
       {
         "Name": "setorId",
         "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
