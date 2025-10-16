@@ -42,6 +42,10 @@ namespace NexusAPI.Domains
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O cargo é obrigatório!")]
         public string? Cargo { get; set; }
+
+        [Column(TypeName = "VARCHAR(50)")]
+        [Required(ErrorMessage = "O tipo de acesso (Role) é obrigatório!")]
+        public string? Role { get; set; }
     }
 
 }

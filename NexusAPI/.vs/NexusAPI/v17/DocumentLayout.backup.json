@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\migrations\\20251016111915_addroletofuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:migrations\\20251016111915_addroletofuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\domains\\funcionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:domains\\funcionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\controllers\\setorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:controllers\\setorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 46,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,6 +71,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "20251016111915_AddRoleToFuncionarios.cs",
+              "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Migrations\\20251016111915_AddRoleToFuncionarios.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251016111915_AddRoleToFuncionarios.cs",
+              "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Migrations\\20251016111915_AddRoleToFuncionarios.cs",
+              "RelativeToolTip": "Migrations\\20251016111915_AddRoleToFuncionarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T11:19:16.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Funcionarios.cs",
+              "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Domains\\Funcionarios.cs",
+              "RelativeDocumentMoniker": "Domains\\Funcionarios.cs",
+              "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Domains\\Funcionarios.cs",
+              "RelativeToolTip": "Domains\\Funcionarios.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwC8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T11:16:11.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SetoresController.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\SetoresController.cs",
               "RelativeDocumentMoniker": "Controllers\\SetoresController.cs",
@@ -70,12 +102,11 @@
               "RelativeToolTip": "Controllers\\SetoresController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T18:09:41.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T18:09:41.952Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -93,14 +124,14 @@
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAswCkAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAiwC4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T17:23:12.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -112,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FuncionariosController.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FuncionariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\FuncionariosController.cs",
@@ -124,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "IFuncionariosCursosRepository.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Interfaces\\IFuncionariosCursosRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IFuncionariosCursosRepository.cs",
@@ -136,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "FuncionariosCursosRepository.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Repositories\\FuncionariosCursosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\FuncionariosCursosRepository.cs",
@@ -148,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "FuncionariosCursosController.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FuncionariosCursosController.cs",
               "RelativeDocumentMoniker": "Controllers\\FuncionariosCursosController.cs",
@@ -160,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "DTO\\LoginDTO.cs",
@@ -172,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "IFuncionariosRepository.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Interfaces\\IFuncionariosRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IFuncionariosRepository.cs",
@@ -184,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "FuncionariosRepository.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Repositories\\FuncionariosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",

@@ -920,6 +920,7 @@
           "dataNascimento",
           "email",
           "nome",
+          "role",
           "senha",
           "setorId",
           "tipoFuncionarioId"
@@ -961,6 +962,10 @@
             "format": "date-time"
           },
           "cargo": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "role": {
             "minLength": 1,
             "type": "string"
           }

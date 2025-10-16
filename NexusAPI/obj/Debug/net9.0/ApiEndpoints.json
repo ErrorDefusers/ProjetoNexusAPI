@@ -460,7 +460,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "login",
+        "Name": "loginDto",
         "Type": "NexusAPI.DTO.LoginDTO",
         "IsRequired": true
       }
