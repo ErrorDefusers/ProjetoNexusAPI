@@ -9,15 +9,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --------------------
-// DbContext
-// --------------------
+
 builder.Services.AddDbContext<NexusContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// --------------------
-// Registrando Repositories para DI
-// --------------------
+
 builder.Services.AddScoped<ICursosRepository, CursosRepository>();
 builder.Services.AddScoped<IFerramentasRepository, FerramentasRepository>();
 builder.Services.AddScoped<ISetoresRepository, SetoresRepository>();
@@ -26,9 +22,7 @@ builder.Services.AddScoped<IFuncionarioFerramentasRepository, FuncionariosFerram
 builder.Services.AddScoped<IFuncionariosRepository, FuncionariosRepository>();
 builder.Services.AddScoped<IFuncionariosCursosRepository, FuncionariosCursosRepository>();
 
-// --------------------
-// JWT Authentication
-// --------------------
+
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddAuthentication(options =>
@@ -50,29 +44,23 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// --------------------
-// Habilitando CORS para o frontend
-// --------------------
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173") // Porta do React
+        policy.WithOrigins("http://localhost:5173") 
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials(); // útil se usar cookies
+              .AllowCredentials(); 
     });
 });
 
-// --------------------
-// Controllers e HttpClient
-// --------------------
+
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 
-// --------------------
-// Swagger com suporte a JWT
-// --------------------
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -110,9 +98,8 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// --------------------
-// Configuração Swagger (modo dev)
-// --------------------
+
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -123,13 +110,10 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// --------------------
-// Middleware
-// --------------------
-// HTTPS (verifique se o React também acessa via https)
+
 app.UseHttpsRedirection();
 
-// **Ordem importante: CORS antes de auth**
+
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
