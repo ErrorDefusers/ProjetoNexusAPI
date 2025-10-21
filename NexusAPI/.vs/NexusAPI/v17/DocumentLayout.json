@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 46,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAwGsAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T14:21:14.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FuncionariosController.cs",
+              "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FuncionariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FuncionariosController.cs",
+              "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FuncionariosController.cs",
+              "RelativeToolTip": "Controllers\\FuncionariosController.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAHwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T13:45:36.714Z",
+              "EditorCaption": ""
             }
           ]
         }

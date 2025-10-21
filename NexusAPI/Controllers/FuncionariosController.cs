@@ -90,7 +90,7 @@ namespace NexusAPI.Controllers
         }
 
         // Listar funcionários (precisa de token JWT)
-        [Authorize]
+        //[Authorize]
         [HttpGet("listar")]
         public IActionResult Listar()
         {
