@@ -16,6 +16,7 @@ namespace NexusAPI.Repositories
             _context = context;
         }
 
+        // Salvar ou atualizar funcionário
         public void Salvar(Funcionarios funcionario)
         {
             var existente = _context.Funcionarios.Find(funcionario.IdFuncionario);
@@ -33,9 +34,11 @@ namespace NexusAPI.Repositories
                 existente.TipoFuncionarioId = funcionario.TipoFuncionarioId;
                 existente.SetorId = funcionario.SetorId;
                 existente.DataNascimento = funcionario.DataNascimento;
+                existente.Role = funcionario.Role;
 
-                
-                existente.ImagemPerfil = funcionario.ImagemPerfil;
+                // Atualiza a imagem caso exista
+                if (!string.IsNullOrEmpty(funcionario.ImagemPerfil))
+                    existente.ImagemPerfil = funcionario.ImagemPerfil;
 
                 _context.Funcionarios.Update(existente);
             }
@@ -43,6 +46,7 @@ namespace NexusAPI.Repositories
             _context.SaveChanges();
         }
 
+        // Listar todos os funcionários
         public List<Funcionarios> Listar()
         {
             return _context.Funcionarios
@@ -51,6 +55,7 @@ namespace NexusAPI.Repositories
                 .ToList();
         }
 
+        // Buscar funcionário por email
         public Funcionarios? BuscarPorEmail(string email)
         {
             return _context.Funcionarios
@@ -59,6 +64,7 @@ namespace NexusAPI.Repositories
                 .FirstOrDefault(f => f.Email.ToLower() == email.ToLower());
         }
 
+        // Deletar funcionário
         public void Deletar(Guid id)
         {
             var funcionario = _context.Funcionarios.Find(id);
@@ -69,7 +75,7 @@ namespace NexusAPI.Repositories
             }
         }
 
-        
+        // Atualizar apenas a imagem do funcionário
         public void AtualizarImagem(Guid idFuncionario, string caminhoImagem)
         {
             var funcionario = _context.Funcionarios.Find(idFuncionario);

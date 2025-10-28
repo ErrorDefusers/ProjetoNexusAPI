@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NexusAPI.Domains;
 using NexusAPI.Interfaces;
-using System;
-using System.IO;
+using NexusAPI.DTO;
 
 namespace NexusAPI.Controllers
 {
@@ -11,15 +10,13 @@ namespace NexusAPI.Controllers
     public class FuncionariosController : ControllerBase
     {
         private readonly IFuncionariosRepository _funcRepository;
-        private readonly IWebHostEnvironment _environment;
 
-        public FuncionariosController(IFuncionariosRepository funcRepository, IWebHostEnvironment environment)
+        public FuncionariosController(IFuncionariosRepository funcRepository)
         {
             _funcRepository = funcRepository;
-            _environment = environment;
         }
 
-        // Criar funcionário 
+        
         [HttpPost("criar")]
         public IActionResult Criar(
             string nome,
@@ -29,8 +26,7 @@ namespace NexusAPI.Controllers
             string cargo,
             Guid tipoFuncionarioId,
             Guid setorId,
-            string role,
-            IFormFile? imagem = null)
+            string role)
         {
             try
             {
@@ -47,31 +43,8 @@ namespace NexusAPI.Controllers
                     Role = role
                 };
 
-                // Salvar imagem, se houver
-                if (imagem != null && imagem.Length > 0)
-                {
-                    
-                    var webRoot = _environment.WebRootPath;
-                    if (string.IsNullOrEmpty(webRoot))
-                        webRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-
-                    string pastaImagens = Path.Combine(webRoot, "imagensPerfil");
-                    if (!Directory.Exists(pastaImagens))
-                        Directory.CreateDirectory(pastaImagens);
-
-                    string nomeArquivo = $"{Guid.NewGuid()}{Path.GetExtension(imagem.FileName)}";
-                    string caminhoCompleto = Path.Combine(pastaImagens, nomeArquivo);
-
-                    using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
-                    {
-                        imagem.CopyTo(stream);
-                    }
-
-                    funcionario.ImagemPerfil = $"/imagensPerfil/{nomeArquivo}";
-                }
-
                 _funcRepository.Salvar(funcionario);
-                return Ok("Funcionário cadastrado!");
+                return Ok("Funcionário cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -79,7 +52,7 @@ namespace NexusAPI.Controllers
             }
         }
 
-        // Atualizar funcionário 
+       
         [HttpPut("atualizar")]
         public IActionResult Atualizar(
             Guid id,
@@ -90,8 +63,7 @@ namespace NexusAPI.Controllers
             string cargo,
             Guid tipoFuncionarioId,
             Guid setorId,
-            string role,
-            IFormFile? imagem = null)
+            string role)
         {
             try
             {
@@ -108,29 +80,8 @@ namespace NexusAPI.Controllers
                     Role = role
                 };
 
-                if (imagem != null && imagem.Length > 0)
-                {
-                    var webRoot = _environment.WebRootPath;
-                    if (string.IsNullOrEmpty(webRoot))
-                        webRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-
-                    string pastaImagens = Path.Combine(webRoot, "imagensPerfil");
-                    if (!Directory.Exists(pastaImagens))
-                        Directory.CreateDirectory(pastaImagens);
-
-                    string nomeArquivo = $"{Guid.NewGuid()}{Path.GetExtension(imagem.FileName)}";
-                    string caminhoCompleto = Path.Combine(pastaImagens, nomeArquivo);
-
-                    using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
-                    {
-                        imagem.CopyTo(stream);
-                    }
-
-                    funcionario.ImagemPerfil = $"/imagensPerfil/{nomeArquivo}";
-                }
-
                 _funcRepository.Salvar(funcionario);
-                return Ok("Funcionário atualizado!");
+                return Ok("Funcionário atualizado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -138,6 +89,49 @@ namespace NexusAPI.Controllers
             }
         }
 
+        
+        [HttpPut("atualizar-imagem")]
+        public IActionResult AtualizarImagem([FromForm] AtualizarImagemDTO dados)
+        {
+            if (dados.Imagem == null || dados.Id == Guid.Empty)
+                return BadRequest("Arquivo ou ID inválido.");
+
+            try
+            {
+                var funcionario = _funcRepository.Listar()
+                    .FirstOrDefault(f => f.IdFuncionario == dados.Id);
+
+                if (funcionario == null)
+                    return NotFound("Funcionário não encontrado.");
+
+                // Cria pasta se não existir
+                var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "funcionarios");
+                if (!Directory.Exists(pasta))
+                    Directory.CreateDirectory(pasta);
+
+                // Nome único para o arquivo
+                var nomeArquivo = $"{Guid.NewGuid()}{Path.GetExtension(dados.Imagem.FileName)}";
+                var caminhoCompleto = Path.Combine(pasta, nomeArquivo);
+
+                // Salva o arquivo no servidor
+                using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                {
+                    dados.Imagem.CopyTo(stream);
+                }
+
+                // Atualiza o caminho da imagem no banco
+                funcionario.ImagemPerfil = $"/images/funcionarios/{nomeArquivo}";
+                _funcRepository.Salvar(funcionario);
+
+                return Ok(new { imagemPerfil = funcionario.ImagemPerfil });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro ao atualizar imagem: " + ex.Message);
+            }
+        }
+
+       
         [HttpGet("listar")]
         public IActionResult Listar()
         {
@@ -152,13 +146,16 @@ namespace NexusAPI.Controllers
             }
         }
 
+        
         [HttpGet("buscar")]
         public IActionResult Buscar(string email)
         {
             try
             {
                 var funcionario = _funcRepository.BuscarPorEmail(email);
-                if (funcionario == null) return NotFound("Funcionário não encontrado");
+                if (funcionario == null)
+                    return NotFound("Funcionário não encontrado.");
+
                 return Ok(funcionario);
             }
             catch (Exception ex)
@@ -167,13 +164,14 @@ namespace NexusAPI.Controllers
             }
         }
 
+      
         [HttpDelete("deletar/{id}")]
         public IActionResult Deletar(Guid id)
         {
             try
             {
                 _funcRepository.Deletar(id);
-                return Ok("Funcionário deletado!");
+                return Ok("Funcionário deletado com sucesso!");
             }
             catch (Exception ex)
             {

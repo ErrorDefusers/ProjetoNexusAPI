@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NexusAPI.Domains;
 using Microsoft.OpenApi.Models;
 using NexusAPI.Interfaces;
@@ -9,11 +9,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// ==================== CONFIGURAÇÃO DO BANCO ====================
 builder.Services.AddDbContext<NexusContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+// ==================== INJEÇÃO DE DEPENDÊNCIAS ====================
 builder.Services.AddScoped<ICursosRepository, CursosRepository>();
 builder.Services.AddScoped<IFerramentasRepository, FerramentasRepository>();
 builder.Services.AddScoped<ISetoresRepository, SetoresRepository>();
@@ -22,7 +22,7 @@ builder.Services.AddScoped<IFuncionarioFerramentasRepository, FuncionariosFerram
 builder.Services.AddScoped<IFuncionariosRepository, FuncionariosRepository>();
 builder.Services.AddScoped<IFuncionariosCursosRepository, FuncionariosCursosRepository>();
 
-
+// ==================== CONFIGURAÇÃO DO JWT ====================
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddAuthentication(options =>
@@ -44,30 +44,30 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+// ==================== CORS ====================
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173") 
+        policy.WithOrigins("http://localhost:5173")
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials(); 
+              .AllowCredentials();
     });
 });
 
-
+// ==================== CONTROLLERS E HTTP CLIENT ====================
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 
-
+// ==================== SWAGGER ====================
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Minha API do Nexus",
         Version = "v1",
-        Description = "Documenta��o da API do Nexus"
+        Description = "Documentação da API do Nexus"
     });
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -77,7 +77,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Digite 'Bearer' [espa�o] e depois seu token.\n\nExemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        Description = "Digite 'Bearer' [espaço] e depois seu token.\n\nExemplo: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
     });
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -96,10 +96,10 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// ==================== BUILD APP ====================
 var app = builder.Build();
 
-
-
+// ==================== CONFIGURAÇÃO DO PIPELINE ====================
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -110,14 +110,19 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-
 app.UseHttpsRedirection();
-
 
 app.UseCors("CorsPolicy");
 
 app.UseStaticFiles();
 
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
+
+app.UseDeveloperExceptionPage();
+
 
 app.Run();

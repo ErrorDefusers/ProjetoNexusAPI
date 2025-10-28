@@ -274,10 +274,26 @@
         "Name": "role",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.FuncionariosController",
+    "Method": "AtualizarImagem",
+    "RelativePath": "api/Funcionarios/atualizar-imagem",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Imagem",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       },
       {
-        "Name": "imagem",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "Name": "Id",
+        "Type": "System.Guid",
         "IsRequired": false
       }
     ],
@@ -345,11 +361,6 @@
       {
         "Name": "role",
         "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "imagem",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }
     ],

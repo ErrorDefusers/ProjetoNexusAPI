@@ -392,26 +392,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "imagem": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "imagem": {
-                  "style": "form"
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -493,20 +473,39 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Funcionarios/atualizar-imagem": {
+      "put": {
+        "tags": [
+          "Funcionarios"
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
-                  "imagem": {
+                  "Imagem": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
                   }
                 }
               },
               "encoding": {
-                "imagem": {
+                "Imagem": {
+                  "style": "form"
+                },
+                "Id": {
                   "style": "form"
                 }
               }
