@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\imagensPerfil\\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg",
+      "PackagePath": "staticwebassets\\imagensPerfil\\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.NexusAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.NexusAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.NexusAPI.props",
+      "PackagePath": "build\\NexusAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.NexusAPI.props",
+      "PackagePath": "buildMultiTargeting\\NexusAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.NexusAPI.props",
+      "PackagePath": "buildTransitive\\NexusAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

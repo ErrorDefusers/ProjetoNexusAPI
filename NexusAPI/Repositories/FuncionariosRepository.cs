@@ -21,7 +21,9 @@ namespace NexusAPI.Repositories
             var existente = _context.Funcionarios.Find(funcionario.IdFuncionario);
 
             if (existente == null)
+            {
                 _context.Funcionarios.Add(funcionario);
+            }
             else
             {
                 existente.Nome = funcionario.Nome;
@@ -31,6 +33,9 @@ namespace NexusAPI.Repositories
                 existente.TipoFuncionarioId = funcionario.TipoFuncionarioId;
                 existente.SetorId = funcionario.SetorId;
                 existente.DataNascimento = funcionario.DataNascimento;
+
+                
+                existente.ImagemPerfil = funcionario.ImagemPerfil;
 
                 _context.Funcionarios.Update(existente);
             }
@@ -60,6 +65,17 @@ namespace NexusAPI.Repositories
             if (funcionario != null)
             {
                 _context.Funcionarios.Remove(funcionario);
+                _context.SaveChanges();
+            }
+        }
+
+        
+        public void AtualizarImagem(Guid idFuncionario, string caminhoImagem)
+        {
+            var funcionario = _context.Funcionarios.Find(idFuncionario);
+            if (funcionario != null)
+            {
+                funcionario.ImagemPerfil = caminhoImagem;
                 _context.SaveChanges();
             }
         }

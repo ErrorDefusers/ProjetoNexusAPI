@@ -116,7 +116,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
 
-
+app.UseStaticFiles();
 
 app.MapControllers();
 

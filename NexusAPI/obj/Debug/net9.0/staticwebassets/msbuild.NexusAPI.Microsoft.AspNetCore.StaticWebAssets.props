@@ -1,0 +1,22 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagensPerfil\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>NexusAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/NexusAPI</BasePath>
+      <RelativePath>imagensPerfil/1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zmtp6d096d</Fingerprint>
+      <Integrity>S7ygwR7I7GUWVtWRXCSMxqa4NG7aDdFJfb2lRqSNtc8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagensPerfil\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

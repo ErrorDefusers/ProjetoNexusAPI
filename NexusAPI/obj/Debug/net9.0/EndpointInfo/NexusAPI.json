@@ -6,6 +6,68 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Acessos/registrar": {
+      "post": {
+        "tags": [
+          "Acessos"
+        ],
+        "parameters": [
+          {
+            "name": "funcionarioId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ferramentaId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Acessos/funcionario/{id}": {
+      "get": {
+        "tags": [
+          "Acessos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Acessos/estatisticas": {
+      "get": {
+        "tags": [
+          "Acessos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cursos": {
       "get": {
         "tags": [
@@ -330,6 +392,26 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "imagem": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -411,6 +493,26 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "imagem": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -982,6 +1084,10 @@
           "role": {
             "minLength": 1,
             "type": "string"
+          },
+          "imagemPerfil": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
