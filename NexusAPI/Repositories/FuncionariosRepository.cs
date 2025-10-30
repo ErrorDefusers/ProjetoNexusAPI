@@ -82,5 +82,18 @@ namespace NexusAPI.Repositories
                 _context.SaveChanges();
             }
         }
+
+        // Listar todos os setores
+        public List<Setores> ListarSetores()
+        {
+            return _context.Setores.ToList();
+        }
+
+        // Listar todos os tipos de funcionários (cargos)
+        public List<TiposFuncionarios> ListarTiposFuncionarios()
+        {
+            return _context.TiposFuncionarios.ToList();
+        }
+
     }
 }

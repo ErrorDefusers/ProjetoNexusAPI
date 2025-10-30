@@ -178,5 +178,34 @@ namespace NexusAPI.Controllers
                 return StatusCode(500, "Erro ao deletar funcionário: " + ex.Message);
             }
         }
+
+        [HttpGet("setores")]
+        public IActionResult ListarSetores()
+        {
+            try
+            {
+                var setores = _funcRepository.ListarSetores(); 
+                return Ok(setores.Select(s => new { s.IdSetor, s.TipoSetor }));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro ao listar setores: " + ex.Message);
+            }
+        }
+
+        [HttpGet("cargos")]
+        public IActionResult ListarCargos()
+        {
+            try
+            {
+                var cargos = _funcRepository.ListarTiposFuncionarios(); 
+                return Ok(cargos.Select(c => new { c.IdTipoFuncionario, c.TipoDeFuncionario }));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro ao listar cargos: " + ex.Message);
+            }
+        }
+
     }
 }

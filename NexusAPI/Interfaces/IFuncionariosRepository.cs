@@ -10,5 +10,8 @@ namespace NexusAPI.Interfaces
         List<Funcionarios> Listar();
         Funcionarios? BuscarPorEmail(string email);
         void Deletar(Guid id);
+
+        List<Setores> ListarSetores();
+        List<TiposFuncionarios> ListarTiposFuncionarios();
     }
 }

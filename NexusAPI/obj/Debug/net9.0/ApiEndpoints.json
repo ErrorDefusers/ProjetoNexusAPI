@@ -333,6 +333,16 @@
   },
   {
     "ContainingType": "NexusAPI.Controllers.FuncionariosController",
+    "Method": "ListarCargos",
+    "RelativePath": "api/Funcionarios/cargos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.FuncionariosController",
     "Method": "Criar",
     "RelativePath": "api/Funcionarios/criar",
     "HttpMethod": "POST",
@@ -402,6 +412,16 @@
     "ContainingType": "NexusAPI.Controllers.FuncionariosController",
     "Method": "Listar",
     "RelativePath": "api/Funcionarios/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.FuncionariosController",
+    "Method": "ListarSetores",
+    "RelativePath": "api/Funcionarios/setores",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -596,6 +596,30 @@
         }
       }
     },
+    "/api/Funcionarios/setores": {
+      "get": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Funcionarios/cargos": {
+      "get": {
+        "tags": [
+          "Funcionarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FuncionariosCursos/criar": {
       "post": {
         "tags": [
