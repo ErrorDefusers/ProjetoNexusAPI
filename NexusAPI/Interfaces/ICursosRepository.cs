@@ -14,6 +14,7 @@ namespace NexusAPI.Interfaces
         void Salvar(Cursos curso); // Salva os cursos
         void AtualizarCurso(Cursos curso); // Atualiza
         void Deletar(Guid id);
+        Cursos BuscarPorId(Guid id);
 
 
     }

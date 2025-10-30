@@ -73,7 +73,7 @@ namespace NexusAPI.Controllers
             }
         }
 
-        
+
         [HttpGet("externos")]
         public IActionResult ListarExternos()
         {
@@ -87,5 +87,19 @@ namespace NexusAPI.Controllers
 
             return Ok(cursosExternos);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                return Ok(_cursosRepository.BuscarPorId(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }

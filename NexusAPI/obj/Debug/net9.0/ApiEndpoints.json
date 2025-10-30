@@ -111,6 +111,22 @@
   },
   {
     "ContainingType": "NexusAPI.Controllers.CursosController",
+    "Method": "GetById",
+    "RelativePath": "api/Cursos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.CursosController",
     "Method": "ListarExternos",
     "RelativePath": "api/Cursos/externos",
     "HttpMethod": "GET",

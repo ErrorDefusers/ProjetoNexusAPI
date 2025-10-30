@@ -15,7 +15,6 @@ namespace NexusAPI.Repositories
             _context = context;
         }
 
-        
         public void Salvar(Cursos curso)
         {
             try
@@ -29,7 +28,6 @@ namespace NexusAPI.Repositories
             }
         }
 
-        
         public void AtualizarCurso(Cursos curso)
         {
             try
@@ -43,7 +41,6 @@ namespace NexusAPI.Repositories
             }
         }
 
-        
         public void Deletar(Guid id)
         {
             try
@@ -64,10 +61,19 @@ namespace NexusAPI.Repositories
         
         public List<Cursos> Listar()
         {
-            return _context.Cursos.ToList();
+            return _context.Cursos
+                .Select(c => new Cursos
+                {
+                    IdCurso = c.IdCurso,
+                    IdExterno = c.IdExterno ?? string.Empty,
+                    Titulo = c.Titulo ?? string.Empty,
+                    Descricao = c.Descricao ?? string.Empty,
+                    Url = c.Url ?? string.Empty,
+                    Progresso = c.Progresso ?? 0 
+                })
+                .ToList();
         }
 
-        
         public void IdExterno(Guid id, string idExterno)
         {
             var curso = _context.Cursos.Find(id);
@@ -78,7 +84,6 @@ namespace NexusAPI.Repositories
             }
         }
 
-        
         public void Titulo(Guid id, string titulo)
         {
             var curso = _context.Cursos.Find(id);
@@ -89,7 +94,6 @@ namespace NexusAPI.Repositories
             }
         }
 
-        
         public void Url(Guid id, string url)
         {
             var curso = _context.Cursos.Find(id);
@@ -97,6 +101,28 @@ namespace NexusAPI.Repositories
             {
                 curso.Url = url;
                 _context.SaveChanges();
+            }
+        }
+
+        public Cursos BuscarPorId(Guid id)
+        {
+            try
+            {
+                return _context.Cursos
+                    .Select(e => new Cursos
+                    {
+                        IdCurso = e.IdCurso,
+                        IdExterno = e.IdExterno ?? string.Empty,
+                        Titulo = e.Titulo ?? string.Empty,
+                        Descricao = e.Descricao ?? string.Empty,
+                        Url = e.Url ?? string.Empty,
+                        Progresso = e.Progresso ?? 0
+                    })
+                    .FirstOrDefault(e => e.IdCurso == id)!;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao buscar curso: " + ex.Message);
             }
         }
     }

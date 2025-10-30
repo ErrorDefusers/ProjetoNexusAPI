@@ -170,6 +170,27 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Cursos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Cursos/externos": {
@@ -1000,7 +1021,6 @@
     "schemas": {
       "Cursos": {
         "required": [
-          "idExterno",
           "titulo",
           "url"
         ],
@@ -1011,8 +1031,8 @@
             "format": "uuid"
           },
           "idExterno": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "titulo": {
             "minLength": 1,
@@ -1025,6 +1045,11 @@
           "url": {
             "minLength": 1,
             "type": "string"
+          },
+          "progresso": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1033,6 +1058,8 @@
         "required": [
           "cargo",
           "dataNascimento",
+          "dtFinal",
+          "dtInicio",
           "email",
           "nome",
           "role",
@@ -1087,6 +1114,14 @@
           "imagemPerfil": {
             "type": "string",
             "nullable": true
+          },
+          "dtInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dtFinal": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

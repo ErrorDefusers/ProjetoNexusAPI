@@ -11,20 +11,23 @@ namespace NexusAPI.Domains
         public Guid IdCurso { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "O id externo é obrigatório!")]
-        public string IdExterno { get; set; }
+        
+        public string? IdExterno { get; set; } = string.Empty;
 
         [Column(TypeName = "VARCHAR(250)")]
         [Required(ErrorMessage = "O título é obrigatório!")]
-        public string Titulo { get; set; }
+        public string Titulo { get; set; } = string.Empty;
 
-        // nova propriedade Descricao
         [Column(TypeName = "VARCHAR(500)")]
-        public string? Descricao { get; set; }
+        public string? Descricao { get; set; } = string.Empty;
 
         [Column(TypeName = "VARCHAR(500)")]
         [Required(ErrorMessage = "A URL é obrigatória!")]
-        public string Url { get; set; }
+        public string Url { get; set; } = string.Empty;
+
+        [Column(TypeName = "Float")]
+        
+        public float? Progresso { get; set; } = 0;
 
         public Cursos() { }
     }

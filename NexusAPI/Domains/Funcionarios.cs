@@ -50,6 +50,18 @@ namespace NexusAPI.Domains
         [Column(TypeName = "VARCHAR(255)")]
         public string? ImagemPerfil { get; set; }
 
+        [Column(TypeName = "DATE")]
+        [Required(ErrorMessage = "A data de inicio é obrigatória!")]
+
+        public DateTime DtInicio { get; set; }
+
+        [Column(TypeName = "DATE")]
+
+        [Required(ErrorMessage = "A data de fim é obrigatória!")]
+
+        public DateTime DtFinal { get; set; }
+
+
     }
 
 }

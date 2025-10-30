@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\imagensPerfil\\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg"
     },
     {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\4c906d12-a5c0-4ec1-bd51-66581b5ffd7b.png",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\4c906d12-a5c0-4ec1-bd51-66581b5ffd7b.png"
+    },
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\902e10de-3bbc-4785-844c-15c048d7bb7d.jpg",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\902e10de-3bbc-4785-844c-15c048d7bb7d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\9c1ffea4-6d0e-4ed2-827d-05c465a6c174.png",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\9c1ffea4-6d0e-4ed2-827d-05c465a6c174.png"
+    },
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\a7b90356-ede8-4259-a204-b2743e1845c3.png",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\a7b90356-ede8-4259-a204-b2743e1845c3.png"
+    },
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\a986dee7-ecec-41d9-a66b-3082c093f07c.jpg",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\a986dee7-ecec-41d9-a66b-3082c093f07c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\dd5823ea-500a-4f37-96de-c9b9341e5d7b.jpg",
+      "PackagePath": "staticwebassets\\images\\funcionarios\\dd5823ea-500a-4f37-96de-c9b9341e5d7b.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.NexusAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
