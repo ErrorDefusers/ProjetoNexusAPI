@@ -72,6 +72,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\funcionarios\5d0adfde-27f7-48c6-b78a-728e290c9afb.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\funcionarios\8f24c8ac-c963-4f0f-9008-b3649d8219b3.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>NexusAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/NexusAPI</BasePath>
+      <RelativePath>images/funcionarios/8f24c8ac-c963-4f0f-9008-b3649d8219b3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0qxcm51p94</Fingerprint>
+      <Integrity>uI8uiZeonWcARi+c8gJaT99pbcd5FrnhI51686rDEcc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\funcionarios\8f24c8ac-c963-4f0f-9008-b3649d8219b3.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\funcionarios\902e10de-3bbc-4785-844c-15c048d7bb7d.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>NexusAPI</SourceId>

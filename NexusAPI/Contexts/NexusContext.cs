@@ -16,6 +16,8 @@ namespace NexusAPI.Domains
         public DbSet<TiposFuncionarios> TiposFuncionarios { get; set; }
         public DbSet<FuncionarioFerramentas> FuncionariosFerramentas { get; set; }
         public DbSet<DtAcesso> DtAcessos { get; set; }
+        public DbSet<AcessosVideos> AcessosVideos { get; set; }
+
 
 
 

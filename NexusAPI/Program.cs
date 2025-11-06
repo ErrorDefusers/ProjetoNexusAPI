@@ -21,6 +21,7 @@ builder.Services.AddScoped<ITiposFuncionariosRepository, TiposFuncionariosReposi
 builder.Services.AddScoped<IFuncionarioFerramentasRepository, FuncionariosFerramentasRepository>();
 builder.Services.AddScoped<IFuncionariosRepository, FuncionariosRepository>();
 builder.Services.AddScoped<IFuncionariosCursosRepository, FuncionariosCursosRepository>();
+builder.Services.AddScoped<IAcessosVideosRepository, AcessosVideosRepository>();
 
 // ==================== CONFIGURAÇÃO DO JWT ====================
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);

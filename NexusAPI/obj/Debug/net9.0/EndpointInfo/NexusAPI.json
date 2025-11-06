@@ -68,6 +68,72 @@
         }
       }
     },
+    "/api/AcessosVideos/registrar": {
+      "post": {
+        "tags": [
+          "AcessosVideos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcessosVideos"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcessosVideos"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcessosVideos"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AcessosVideos/funcionario/{id}": {
+      "get": {
+        "tags": [
+          "AcessosVideos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AcessosVideos/estatisticas": {
+      "get": {
+        "tags": [
+          "AcessosVideos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cursos": {
       "get": {
         "tags": [
@@ -1043,6 +1109,38 @@
   },
   "components": {
     "schemas": {
+      "AcessosVideos": {
+        "required": [
+          "cursoId",
+          "funcionarioId"
+        ],
+        "type": "object",
+        "properties": {
+          "idAcessoVideo": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "funcionarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "cursoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "dtAcesso": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "funcionario": {
+            "$ref": "#/components/schemas/Funcionarios"
+          },
+          "curso": {
+            "$ref": "#/components/schemas/Cursos"
+          }
+        },
+        "additionalProperties": false
+      },
       "Cursos": {
         "required": [
           "titulo",
@@ -1069,6 +1167,10 @@
           "url": {
             "minLength": 1,
             "type": "string"
+          },
+          "imagemCapa": {
+            "type": "string",
+            "nullable": true
           },
           "progresso": {
             "type": "number",

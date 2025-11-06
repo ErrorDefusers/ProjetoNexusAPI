@@ -25,6 +25,10 @@ namespace NexusAPI.Domains
         [Required(ErrorMessage = "A URL é obrigatória!")]
         public string Url { get; set; } = string.Empty;
 
+        [Column(TypeName = "VARCHAR(MAX)")]
+        public string? ImagemCapa { get; set; }
+
+
         [Column(TypeName = "Float")]
         
         public float? Progresso { get; set; } = 0;

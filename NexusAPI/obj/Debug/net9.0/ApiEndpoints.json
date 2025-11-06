@@ -47,6 +47,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "NexusAPI.Controllers.AcessosVideosController",
+    "Method": "Estatisticas",
+    "RelativePath": "api/AcessosVideos/estatisticas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.AcessosVideosController",
+    "Method": "BuscarPorFuncionario",
+    "RelativePath": "api/AcessosVideos/funcionario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.AcessosVideosController",
+    "Method": "Registrar",
+    "RelativePath": "api/AcessosVideos/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "acesso",
+        "Type": "NexusAPI.Domains.AcessosVideos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NexusAPI.Controllers.CursosController",
     "Method": "Listar",
     "RelativePath": "api/Cursos",

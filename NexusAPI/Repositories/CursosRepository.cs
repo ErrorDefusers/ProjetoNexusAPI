@@ -69,7 +69,8 @@ namespace NexusAPI.Repositories
                     Titulo = c.Titulo ?? string.Empty,
                     Descricao = c.Descricao ?? string.Empty,
                     Url = c.Url ?? string.Empty,
-                    Progresso = c.Progresso ?? 0 
+                    Progresso = c.Progresso ?? 0,
+                     ImagemCapa = c.ImagemCapa
                 })
                 .ToList();
         }
@@ -116,7 +117,8 @@ namespace NexusAPI.Repositories
                         Titulo = e.Titulo ?? string.Empty,
                         Descricao = e.Descricao ?? string.Empty,
                         Url = e.Url ?? string.Empty,
-                        Progresso = e.Progresso ?? 0
+                        Progresso = e.Progresso ?? 0,
+                          ImagemCapa = e.ImagemCapa
                     })
                     .FirstOrDefault(e => e.IdCurso == id)!;
             }
