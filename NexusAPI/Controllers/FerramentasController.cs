@@ -15,6 +15,7 @@ namespace NexusAPI.Controllers
             _ferramentasRepository = ferramentasRepository;
         }
 
+        // 🔹 GET: api/Ferramentas
         [HttpGet]
         public IActionResult Listar()
         {
@@ -22,63 +23,83 @@ namespace NexusAPI.Controllers
             return Ok(ferramentas);
         }
 
-        
-        [HttpPost("criar")]
-        public IActionResult Criar(string nome, string url, string tipo, bool status = true)
+        // 🔹 GET: api/Ferramentas/{id}
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(Guid id)
+        {
+            var ferramenta = _ferramentasRepository.BuscarPorId(id);
+
+            if (ferramenta == null)
+                return NotFound("Ferramenta não encontrada.");
+
+            return Ok(ferramenta);
+        }
+
+        // 🔹 POST: api/Ferramentas
+        [HttpPost]
+        public IActionResult Criar([FromBody] Ferramentas ferramenta)
         {
             try
             {
-                Ferramentas ferramenta = new Ferramentas();
                 ferramenta.IdFerramenta = Guid.NewGuid();
-                ferramenta.Nome = nome;
-                ferramenta.Url = url;
-                ferramenta.Tipo = tipo;
-                ferramenta.Status = status;
+                ferramenta.Status = ferramenta.Status; // mantém o valor recebido (true/false)
 
                 _ferramentasRepository.Salvar(ferramenta);
-                return Ok("Ferramenta criada!");
+                return CreatedAtAction(nameof(BuscarPorId), new { id = ferramenta.IdFerramenta }, ferramenta);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Erro ao criar ferramenta: " + ex.Message);
+                return StatusCode(500, $"Erro ao criar ferramenta: {ex.Message}");
             }
         }
 
-        [HttpPut("atualizar/{id}")]
-        public IActionResult Atualizar(Guid id, string nome, string url, string tipo, bool status = true)
+        // 🔹 PUT: api/Ferramentas/{id}
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(Guid id, [FromBody] Ferramentas ferramenta)
         {
             try
             {
-                Ferramentas ferramenta = new Ferramentas();
-                ferramenta.IdFerramenta = id;
-                ferramenta.Nome = nome;
-                ferramenta.Url = url;
-                ferramenta.Tipo = tipo;
-                ferramenta.Status = status;
+                var ferramentaExistente = _ferramentasRepository.BuscarPorId(id);
 
-                _ferramentasRepository.Atualizar(ferramenta);
-                return Ok("Ferramenta atualizada!");
+                if (ferramentaExistente == null)
+                    return NotFound("Ferramenta não encontrada.");
+
+                ferramentaExistente.Nome = ferramenta.Nome;
+                ferramentaExistente.Url = ferramenta.Url;
+                ferramentaExistente.Tipo = ferramenta.Tipo;
+                ferramentaExistente.Status = ferramenta.Status;
+
+                _ferramentasRepository.Atualizar(ferramentaExistente);
+
+                return Ok("Ferramenta atualizada com sucesso!");
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Erro ao atualizar ferramenta: " + ex.Message);
+                return StatusCode(500, $"Erro ao atualizar ferramenta: {ex.Message}");
             }
         }
 
-        [HttpDelete("deletar/{id}")]
+        // 🔹 DELETE: api/Ferramentas/{id}
+        [HttpDelete("{id}")]
         public IActionResult Deletar(Guid id)
         {
             try
             {
+                var ferramenta = _ferramentasRepository.BuscarPorId(id);
+
+                if (ferramenta == null)
+                    return NotFound("Ferramenta não encontrada.");
+
                 _ferramentasRepository.Deletar(id);
-                return Ok("Ferramenta deletada!");
+                return Ok("Ferramenta deletada com sucesso!");
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Erro ao deletar ferramenta: " + ex.Message);
+                return StatusCode(500, $"Erro ao deletar ferramenta: {ex.Message}");
             }
         }
 
+        // 🔹 GET: api/Ferramentas/externos
         [HttpGet("externos")]
         public IActionResult ListarExternos()
         {

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\controllers\\ferramentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:controllers\\ferramentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\repositories\\cursosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:repositories\\cursosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Migrations\\20251106113904_CreateAcessosVideos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251106113904_CreateAcessosVideos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|c:\\users\\50526653850\\desktop\\projetonexusapi\\nexusapi\\migrations\\20251106113904_createacessosvideos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1623DA95-B179-45EB-BB5C-EED475C42DE6}|NexusAPI.csproj|solutionrelative:migrations\\20251106113904_createacessosvideos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FerramentasController.cs",
+              "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FerramentasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FerramentasController.cs",
+              "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Controllers\\FerramentasController.cs",
+              "RelativeToolTip": "Controllers\\FerramentasController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAuwHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:50:48.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CursosRepository.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Repositories\\CursosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\CursosRepository.cs",
               "ToolTip": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Repositories\\CursosRepository.cs",
               "RelativeToolTip": "Repositories\\CursosRepository.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAuwG0AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T13:49:12.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Cursos.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Domains\\Cursos.cs",
               "RelativeDocumentMoniker": "Domains\\Cursos.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -71,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "20251106113904_CreateAcessosVideos.cs",
               "DocumentMoniker": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\Migrations\\20251106113904_CreateAcessosVideos.cs",
               "RelativeDocumentMoniker": "Migrations\\20251106113904_CreateAcessosVideos.cs",

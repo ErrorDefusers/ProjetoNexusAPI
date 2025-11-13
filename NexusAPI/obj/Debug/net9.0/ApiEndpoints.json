@@ -189,8 +189,40 @@
   },
   {
     "ContainingType": "NexusAPI.Controllers.FerramentasController",
+    "Method": "Criar",
+    "RelativePath": "api/Ferramentas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ferramenta",
+        "Type": "NexusAPI.Domains.Ferramentas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.FerramentasController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/Ferramentas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexusAPI.Controllers.FerramentasController",
     "Method": "Atualizar",
-    "RelativePath": "api/Ferramentas/atualizar/{id}",
+    "RelativePath": "api/Ferramentas/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -201,55 +233,9 @@
         "IsRequired": true
       },
       {
-        "Name": "nome",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "url",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "status",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "NexusAPI.Controllers.FerramentasController",
-    "Method": "Criar",
-    "RelativePath": "api/Ferramentas/criar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "nome",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "url",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "status",
-        "Type": "System.Boolean",
-        "IsRequired": false
+        "Name": "ferramenta",
+        "Type": "NexusAPI.Domains.Ferramentas",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -257,7 +243,7 @@
   {
     "ContainingType": "NexusAPI.Controllers.FerramentasController",
     "Method": "Deletar",
-    "RelativePath": "api/Ferramentas/deletar/{id}",
+    "RelativePath": "api/Ferramentas/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

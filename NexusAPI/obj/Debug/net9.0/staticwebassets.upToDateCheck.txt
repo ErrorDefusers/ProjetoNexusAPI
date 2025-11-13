@@ -1,6 +1,8 @@
 wwwroot\imagensPerfil\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg
+wwwroot\images\funcionarios\195f07a4-7861-497c-a793-5f7897693feb.png
 wwwroot\images\funcionarios\2b4a7aa1-8b36-4c32-8642-be369b8ff858.jpg
 wwwroot\images\funcionarios\2dfdd339-9e3d-4f5b-b55b-9f910368b3e6.jpg
+wwwroot\images\funcionarios\35f32af7-d50a-4fdc-b28d-d6089106229a.png
 wwwroot\images\funcionarios\3fecd573-315d-4a3f-84b6-8e320babf309.png
 wwwroot\images\funcionarios\4c906d12-a5c0-4ec1-bd51-66581b5ffd7b.png
 wwwroot\images\funcionarios\5d0adfde-27f7-48c6-b78a-728e290c9afb.png

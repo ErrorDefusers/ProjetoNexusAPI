@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uiUoinO3GOuFuYZRvLSKCLX/3puJjscOKVxqhIIjEFk=",
+  "Hash": "ju3dWXZv6ALHoSXw1xiW2Vs+Z97e0qdH/GSYNa8+pSE=",
   "Source": "NexusAPI",
   "BasePath": "_content/NexusAPI",
   "Mode": "Default",
@@ -36,6 +36,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagensPerfil\\1a9aeccf-7633-4f69-9867-5b5f3bd91232.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\195f07a4-7861-497c-a793-5f7897693feb.png",
+      "SourceId": "NexusAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\",
+      "BasePath": "_content/NexusAPI",
+      "RelativePath": "images/funcionarios/195f07a4-7861-497c-a793-5f7897693feb#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yhz3tsmlzh",
+      "Integrity": "ilxetAk1WQ2dGEen3Qc2gSHx1gEN7uuRtArd5K2/r5M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\funcionarios\\195f07a4-7861-497c-a793-5f7897693feb.png"
     },
     {
       "Identity": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\2b4a7aa1-8b36-4c32-8642-be369b8ff858.jpg",
@@ -78,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\funcionarios\\2dfdd339-9e3d-4f5b-b55b-9f910368b3e6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\35f32af7-d50a-4fdc-b28d-d6089106229a.png",
+      "SourceId": "NexusAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\",
+      "BasePath": "_content/NexusAPI",
+      "RelativePath": "images/funcionarios/35f32af7-d50a-4fdc-b28d-d6089106229a#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zy4xnloq0t",
+      "Integrity": "lX2Ll+7cdUKQeeRGhobWhHM+2/wGHiLPmG8mbUJSCXA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\funcionarios\\35f32af7-d50a-4fdc-b28d-d6089106229a.png"
     },
     {
       "Identity": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\3fecd573-315d-4a3f-84b6-8e320babf309.png",
@@ -437,6 +479,88 @@
       ]
     },
     {
+      "Route": "images/funcionarios/195f07a4-7861-497c-a793-5f7897693feb.png",
+      "AssetFile": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\195f07a4-7861-497c-a793-5f7897693feb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilxetAk1WQ2dGEen3Qc2gSHx1gEN7uuRtArd5K2/r5M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ilxetAk1WQ2dGEen3Qc2gSHx1gEN7uuRtArd5K2/r5M="
+        }
+      ]
+    },
+    {
+      "Route": "images/funcionarios/195f07a4-7861-497c-a793-5f7897693feb.yhz3tsmlzh.png",
+      "AssetFile": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\195f07a4-7861-497c-a793-5f7897693feb.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ilxetAk1WQ2dGEen3Qc2gSHx1gEN7uuRtArd5K2/r5M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yhz3tsmlzh"
+        },
+        {
+          "Name": "label",
+          "Value": "images/funcionarios/195f07a4-7861-497c-a793-5f7897693feb.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ilxetAk1WQ2dGEen3Qc2gSHx1gEN7uuRtArd5K2/r5M="
+        }
+      ]
+    },
+    {
       "Route": "images/funcionarios/2b4a7aa1-8b36-4c32-8642-be369b8ff858.fklxi744bx.jpg",
       "AssetFile": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\2b4a7aa1-8b36-4c32-8642-be369b8ff858.jpg",
       "Selectors": [],
@@ -597,6 +721,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-uI8uiZeonWcARi+c8gJaT99pbcd5FrnhI51686rDEcc="
+        }
+      ]
+    },
+    {
+      "Route": "images/funcionarios/35f32af7-d50a-4fdc-b28d-d6089106229a.png",
+      "AssetFile": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\35f32af7-d50a-4fdc-b28d-d6089106229a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1614914"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lX2Ll+7cdUKQeeRGhobWhHM+2/wGHiLPmG8mbUJSCXA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 11:13:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lX2Ll+7cdUKQeeRGhobWhHM+2/wGHiLPmG8mbUJSCXA="
+        }
+      ]
+    },
+    {
+      "Route": "images/funcionarios/35f32af7-d50a-4fdc-b28d-d6089106229a.zy4xnloq0t.png",
+      "AssetFile": "C:\\Users\\50526653850\\Desktop\\ProjetoNexusAPI\\NexusAPI\\wwwroot\\images\\funcionarios\\35f32af7-d50a-4fdc-b28d-d6089106229a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1614914"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lX2Ll+7cdUKQeeRGhobWhHM+2/wGHiLPmG8mbUJSCXA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Nov 2025 11:13:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zy4xnloq0t"
+        },
+        {
+          "Name": "label",
+          "Value": "images/funcionarios/35f32af7-d50a-4fdc-b28d-d6089106229a.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lX2Ll+7cdUKQeeRGhobWhHM+2/wGHiLPmG8mbUJSCXA="
         }
       ]
     },

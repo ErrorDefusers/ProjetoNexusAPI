@@ -281,41 +281,50 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Ferramentas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/Ferramentas/criar": {
-      "post": {
+    "/api/Ferramentas/{id}": {
+      "get": {
         "tags": [
           "Ferramentas"
         ],
         "parameters": [
           {
-            "name": "nome",
-            "in": "query",
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "url",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "tipo",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": true
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -324,9 +333,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Ferramentas/atualizar/{id}": {
+      },
       "put": {
         "tags": [
           "Ferramentas"
@@ -340,45 +347,33 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "nome",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "url",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "tipo",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": true
-            }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ferramentas"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Ferramentas/deletar/{id}": {
+      },
       "delete": {
         "tags": [
           "Ferramentas"
@@ -1176,6 +1171,42 @@
             "type": "number",
             "format": "float",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ferramentas": {
+        "required": [
+          "descricao",
+          "nome",
+          "status",
+          "tipo",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "idFerramenta": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "descricao": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "tipo": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
