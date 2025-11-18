@@ -104,22 +104,22 @@ namespace NexusAPI.Controllers
                 if (funcionario == null)
                     return NotFound("Funcionário não encontrado.");
 
-                // Cria pasta se não existir
+                
                 var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "funcionarios");
                 if (!Directory.Exists(pasta))
                     Directory.CreateDirectory(pasta);
 
-                // Nome único para o arquivo
+                
                 var nomeArquivo = $"{Guid.NewGuid()}{Path.GetExtension(dados.Imagem.FileName)}";
                 var caminhoCompleto = Path.Combine(pasta, nomeArquivo);
 
-                // Salva o arquivo no servidor
+                
                 using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
                 {
                     dados.Imagem.CopyTo(stream);
                 }
 
-                // Atualiza o caminho da imagem no banco
+                
                 funcionario.ImagemPerfil = $"/images/funcionarios/{nomeArquivo}";
                 _funcRepository.Salvar(funcionario);
 
