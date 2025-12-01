@@ -4,6 +4,8 @@ using NexusAPI.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace NexusAPI.Controllers
 {
@@ -28,18 +30,61 @@ namespace NexusAPI.Controllers
 
         
         [HttpPost]
-        public IActionResult Criar(Cursos curso)
+        public IActionResult Criar([FromForm] Cursos curso)
         {
+            //try
+            //{
+               curso.IdCurso = Guid.NewGuid(); 
+            //    _cursosRepository.Salvar(curso);
+            //    return Ok("Curso criado!");
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    return StatusCode(500, "Erro ao criar curso: " + ex.Message);
+            //}
             try
             {
-                curso.IdCurso = Guid.NewGuid(); 
+                curso.IdCurso = Guid.NewGuid();
+
+                // --------- TRATAMENTO DA IMAGEM ---------
+                if (curso.ImagemUpload != null && curso.ImagemUpload.Length > 0)
+                {
+                    var extensao = Path.GetExtension(curso.ImagemUpload.FileName);
+                    var nomeArquivo = $"{Guid.NewGuid()}{extensao}";
+
+                    var pastaRelativa = "wwwroot/imagens/cursos";
+                    var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
+
+                    if (!Directory.Exists(caminhoPasta))
+                        Directory.CreateDirectory(caminhoPasta);
+
+                    var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+                    using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                    {
+                        curso.ImagemUpload.CopyTo(stream);
+                    }
+
+                    // salva o caminho como string comum (precisa ter campo na tabela!)
+                    curso.ImagemCapa = Path.Combine(pastaRelativa, nomeArquivo).Replace("\\", "/");
+                }
+                else
+                {
+                    return BadRequest("A imagem de capa é obrigatória.");
+                }
+
+                // --------- SALVAR NO BANCO ---------
                 _cursosRepository.Salvar(curso);
+
                 return Ok("Curso criado!");
             }
             catch (Exception ex)
             {
                 return StatusCode(500, "Erro ao criar curso: " + ex.Message);
             }
+
         }
 
         

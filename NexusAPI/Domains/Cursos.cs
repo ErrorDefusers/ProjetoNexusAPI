@@ -28,6 +28,13 @@ namespace NexusAPI.Domains
         [Column(TypeName = "Float")]
         
         public float? Progresso { get; set; } = 0;
+        
+        // ARQUIVO (não vai para o banco)
+        [NotMapped]
+        public IFormFile? ImagemUpload { get; set; }   // usado APENAS para receber o arquivo
+
+        [Column(TypeName = "VARCHAR(300)")]
+        public string? ImagemCapa { get; set; }
 
         public Cursos() { }
     }

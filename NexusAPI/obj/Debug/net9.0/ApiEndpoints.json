@@ -65,9 +65,44 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "curso",
-        "Type": "NexusAPI.Domains.Cursos",
-        "IsRequired": true
+        "Name": "IdCurso",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdExterno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Titulo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Url",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Progresso",
+        "Type": "System.Nullable\u00601[[System.Single, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagemUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagemCapa",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -86,9 +121,44 @@
         "IsRequired": true
       },
       {
-        "Name": "curso",
-        "Type": "NexusAPI.Domains.Cursos",
-        "IsRequired": true
+        "Name": "IdCurso",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdExterno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Titulo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Url",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Progresso",
+        "Type": "System.Nullable\u00601[[System.Single, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagemUpload",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagemCapa",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

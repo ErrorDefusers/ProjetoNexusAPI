@@ -62,16 +62,17 @@ namespace NexusAPI.Repositories
         public List<Cursos> Listar()
         {
             return _context.Cursos
-                .Select(c => new Cursos
-                {
-                    IdCurso = c.IdCurso,
-                    IdExterno = c.IdExterno ?? string.Empty,
-                    Titulo = c.Titulo ?? string.Empty,
-                    Descricao = c.Descricao ?? string.Empty,
-                    Url = c.Url ?? string.Empty,
-                    Progresso = c.Progresso ?? 0 
-                })
-                .ToList();
+        .Select(c => new Cursos
+        {
+            IdCurso = c.IdCurso,
+            IdExterno = c.IdExterno ?? string.Empty,
+            Titulo = c.Titulo ?? string.Empty,
+            Descricao = c.Descricao ?? string.Empty,
+            Url = c.Url ?? string.Empty,
+            Progresso = c.Progresso ?? 0,
+            ImagemCapa = c.ImagemCapa // 👈 ADICIONE ISSO
+        })
+        .ToList();
         }
 
         public void IdExterno(Guid id, string idExterno)
@@ -109,15 +110,16 @@ namespace NexusAPI.Repositories
             try
             {
                 return _context.Cursos
-                    .Select(e => new Cursos
-                    {
-                        IdCurso = e.IdCurso,
-                        IdExterno = e.IdExterno ?? string.Empty,
-                        Titulo = e.Titulo ?? string.Empty,
-                        Descricao = e.Descricao ?? string.Empty,
-                        Url = e.Url ?? string.Empty,
-                        Progresso = e.Progresso ?? 0
-                    })
+    .Select(e => new Cursos
+    {
+        IdCurso = e.IdCurso,
+        IdExterno = e.IdExterno ?? string.Empty,
+        Titulo = e.Titulo ?? string.Empty,
+        Descricao = e.Descricao ?? string.Empty,
+        Url = e.Url ?? string.Empty,
+        Progresso = e.Progresso ?? 0,
+        ImagemCapa = e.ImagemCapa
+    })
                     .FirstOrDefault(e => e.IdCurso == id)!;
             }
             catch (Exception ex)

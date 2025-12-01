@@ -85,19 +85,68 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Cursos"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cursos"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cursos"
+                "required": [
+                  "Titulo",
+                  "Url"
+                ],
+                "type": "object",
+                "properties": {
+                  "IdCurso": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "IdExterno": {
+                    "type": "string"
+                  },
+                  "Titulo": {
+                    "type": "string"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Url": {
+                    "type": "string"
+                  },
+                  "Progresso": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "ImagemUpload": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ImagemCapa": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "IdCurso": {
+                  "style": "form"
+                },
+                "IdExterno": {
+                  "style": "form"
+                },
+                "Titulo": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Url": {
+                  "style": "form"
+                },
+                "Progresso": {
+                  "style": "form"
+                },
+                "ImagemUpload": {
+                  "style": "form"
+                },
+                "ImagemCapa": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -123,23 +172,77 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "IdCurso",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "IdExterno",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Titulo",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Descricao",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Progresso",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "ImagemCapa",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Cursos"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cursos"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Cursos"
+                "type": "object",
+                "properties": {
+                  "ImagemUpload": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ImagemUpload": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -1073,6 +1176,15 @@
           "progresso": {
             "type": "number",
             "format": "float",
+            "nullable": true
+          },
+          "imagemUpload": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "imagemCapa": {
+            "type": "string",
             "nullable": true
           }
         },

@@ -24,7 +24,7 @@ namespace NexusAPI.Domains
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                    "Server=NOTE22-S28\\SQLEXPRESS; Database=nexus; User Id=sa; Pwd=Senai@134; TrustServerCertificate=true;"
+                    "Server=DESKTOP-VINIDR3; Database=nexus; User Id=sa; Pwd=Senai@134; TrustServerCertificate=true;"
                 );
             }
         }
